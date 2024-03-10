@@ -43,13 +43,7 @@ struct ContentView: View {
         
         
     ]
-    
-    
-    
-    
-    
-    
-    
+  
     var body: some View {
         
         NavigationStack{
@@ -76,6 +70,8 @@ struct ContentView: View {
                                        Text(utilisateur.prof)
                                            .italic()
                                            .foregroundStyle(.gray)
+                                       Image(systemName: "arrow.right.to.line")
+                                           
 
                                        
                                        
