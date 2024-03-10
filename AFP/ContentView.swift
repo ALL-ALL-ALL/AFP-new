@@ -51,56 +51,55 @@ struct ContentView: View {
     
     
     var body: some View {
-                NavigationStack{
-                    NavigationLink {
-                        DetailsUtilisateursView()
-                    } label: {
-                        VStack{
-                            ForEach(Utilisateurs) { utilisateur in
-                                
-                                HStack {
-                                    Image(utilisateur.image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                                    
-                                    Text(utilisateur.prenom)
-                                    Text(utilisateur.name)
-                                    Text(utilisateur.prof)
+        
+        NavigationStack{
+            NavigationView {
+                   List(Utilisateurs) { utilisateur in
+                       NavigationLink(destination: DetailsUtilisateursView()) {
+                           HStack {
+                               
+                               Image(utilisateur.image)
+                                   .resizable()
+                                   .aspectRatio(contentMode: .fit)
+                                   .frame(width: 50, height: 50)
+                                   .clipShape(Circle())
+                                   .frame(height: 80)
+                               
+                               VStack {
+                                   HStack {
+                                       Text(utilisateur.prenom)
+                                           .bold()
+                                       
+                                       Text(utilisateur.name)
+                                           .bold()
+                                       
+                                       Text(utilisateur.prof)
+                                           .italic()
+                                           .foregroundStyle(.gray)
+
+                                       
+                                       
+                                       
+                                   }
+
+                                   
 
 
+                               }
+                           }
+                       } // FIN NAVLINK
+                       
+                   } // FIN list
 
-                                } // FIN HSTACK
-              
-                            } // FIN UTILI
-                        } // VSTACK
-
-                            
-                            
-                            
-                        } // FIN LABEL
-
-                        
-                        
-
-                } // FIN NAVIGATIONSTACK
+                   .navigationTitle("le staff")
+                
+                   .listStyle(PlainListStyle()) // Pour que la liste prenne toute la largeur
+                
 
                 
-           
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+               } // FIN NAVIGATIONVIEW
+           } // FIN NAVIGATIONstack
+ 
         
         
     } // FIN body
