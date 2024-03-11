@@ -14,93 +14,170 @@ struct ContentView: View {
     var body: some View {
         
         
-        NavigationStack{
-            
-            
-            NavigationView {
-                   List(Utilisateurs) { utilisateur in
-                       ScrollView{
-                           NavigationLink {
-                               
-                               DetailsUtilisateursView(utilisateur: utilisateur)
-                               
-                                               
-                                               
-                                           
-                              
-                               } label: {
-                               
-                               
-                               
-                               HStack {
+        
+        TabView {
+            NavigationStack{
+                
+                NavigationView {
+                       List(Utilisateurs) { utilisateur in
+                           ScrollView{
+                               NavigationLink {
                                    
-                                   Image(utilisateur.image)
-                                       .resizable()
-                                       .aspectRatio(contentMode: .fit)
-                                       .frame(width: 50, height: 47)
-                                       .clipShape(Circle())
-                                       .shadow(color: .black, radius: 2, x: 0, y: 0)
-                                       .frame(height: 80)
+                                   DetailsUtilisateursView(utilisateur: utilisateur)
                                    
-                                   VStack {
-                                       HStack {
-                                           Text(utilisateur.prenom)
-                                               .bold()
-                                          
-                                           
-                                           Text(utilisateur.name)
-                                               .bold()
-                                           
-                                           Text(utilisateur.prof)
-                                               .italic()
-                                               .foregroundStyle(.gray)
-                                           
-                                           Spacer()
-                                           
-                                           Image(systemName: "arrow.right.to.line.circle.fill")
-                                               .foregroundColor(.red)
+                                                   
+                                                   
                                                
-
-                                           
-                                           
-                                           
-                                       } // HASTACK
-
+                                  
+                                   } label: {
                                        
+                                   
+                                   
+                                   
+                                   HStack {
+                                       
+                                       
+                                       Image(utilisateur.image)
+                                           .resizable(capInsets: EdgeInsets())
+                                           .aspectRatio(contentMode: .fit)
+                                           .frame(width: 50, height: 47)
+                                           .clipShape(Circle())
+                                           .shadow(color: .black, radius: 2, x: 0, y: 0)
+                                           .frame(height: 80)
+                                           .cornerRadius(40)
+                                       
+                                       VStack {
+                                           HStack {
+                                               
+                                               Text(utilisateur.prenom)
+                                                   .bold()
+                                              
+                                               
+                                               Text(utilisateur.name)
+                                                   .bold()
+                                               
+                                               Text(utilisateur.prof)
+                                                   .italic()
+                                                   .foregroundStyle(.gray)
+                                               
+                                               Spacer()
+                                               
+                                               Image(systemName: "arrow.right.to.line.circle.fill")
+                                                   .foregroundColor(.red)
+                                               
+                                                   
+
+                                               
+                                               
+                                               
+                                           } // HASTACK
+                                           
+                                           
+
+                                           
 
 
-                                   }// VSTACK
-                                   
-                               } // HSTACK
-                                   
-                           } // FIN NAVLINK
+                                       }// VSTACK
+                                       
+                                       
+                                       
+                                   } // HSTACK
+                                       
+                                       
+                               } // FIN NAVLINK
+                               
+                               
+
+                               
+                           } // SCROOVIEW
+                           
+                           
+                           
 
                            
-                       } // SCROOVIEW
+                       } // FIN list
+                    
+                    
+                    
+                    
 
                        
-                   } // FIN list
+                    
+                       .listStyle(PlainListStyle()) // Pour que la liste prenne toute la largeur
+
+                    
+
+                    
+                   } // FIN NAVIGATIONVIEW
+                
+                .navigationTitle("le staff")
+                
+                
                 
 
-                   
+            }// FIN NAVIGATIONstack
+            
+            .tabItem { VStack{
                 
-                   .listStyle(PlainListStyle()) // Pour que la liste prenne toute la largeur
+                Image(systemName: "person.2.circle.fill")
+                Text("le Staff")
 
+            } // fin vstack
                 
-
-                
-               } // FIN NAVIGATIONVIEW
-            .navigationTitle("le staff")
+ 
+                            } // FIN tabitem
+            
+            Text("AFP")
+                .tabItem { VStack{
+                    
+                    Image(systemName: "apple.logo")
+                    Text("AFP")
+                    
+                    
+                } // fin vstack
+                    
+                    
+        } // fin tabitem
             
             
-
-           } // FIN NAVIGATIONstack
+            
+            Text("La promo")
+                .tabItem { VStack{
+                    
+                    Image(systemName: "sparkles.tv")
+                    Text("La promo")
+                    
+                    
+                } // fin vstack
+                    
+                    
+        } // fin tabitem
+            
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        } // fin tab view
+        
+        
+        
         
  
         
         
 
     } // FIN body
+    
+    
     
     
 } // fin struct

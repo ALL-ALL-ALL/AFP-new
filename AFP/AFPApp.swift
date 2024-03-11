@@ -11,7 +11,7 @@ import SwiftUI
 struct AFPApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AccueilView()
         }
     }
 }

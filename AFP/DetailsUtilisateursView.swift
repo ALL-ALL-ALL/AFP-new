@@ -39,7 +39,12 @@ struct DetailsUtilisateursView: View {
                     .foregroundStyle(.black)
                     .bold()
                 
+                
             } // fin  hstack
+            .padding(2)
+
+            
+            
             Text(utilisateur.prof)
                 .foregroundStyle(.gray)
             
