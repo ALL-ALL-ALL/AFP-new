@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct Utilisateur: Identifiable {
     var id = UUID()
@@ -22,9 +23,33 @@ struct DetailsUtilisateursView: View {
     var body: some View {
         VStack {
             Image(utilisateur.image)
-
                 .resizable()
-                .frame(width: 50, height: 50)
+                .frame(width: 230, height: 230)
+                .clipShape(Circle())
+                .shadow(color: .black, radius: 5, x: 0.0, y: 0.0)
+            
+            HStack {
+                Text(utilisateur.name)
+                    .font(.headline)
+                    .foregroundStyle(.black)
+                    .bold()
+                
+                Text(utilisateur.prenom)
+                    .font(.headline)
+                    .foregroundStyle(.black)
+                    .bold()
+                
+            } // fin  hstack
+            Text(utilisateur.prof)
+                .foregroundStyle(.gray)
+            
+            Text(utilisateur.ville)
+                .bold()
+                .foregroundStyle(.gray)
+
+
+            
+
             
            
         }
