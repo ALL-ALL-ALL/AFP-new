@@ -8,15 +8,12 @@
 import SwiftUI
 import UIKit
 
-
 struct ContentView: View {
-    @State private var selectedTab = 0
 
     var body: some View {
         
         
         
-        TabView(selection: $selectedTab) {
             
             NavigationStack{
                 
@@ -101,72 +98,7 @@ struct ContentView: View {
             
            
             
-            .tabItem { VStack{
-                
-                Image(systemName: "person.2.circle.fill")
-                Text("le Staff")
-
-            } // fin vstack
-                
- 
-        } // FIN tabitem 1
-            .tag("0")
             
-            
-            
-            
-            AccueilView()
-
-
-                .tabItem { VStack{
-
-                    
-                    Image(systemName: "apple.logo")
-                    Text("AFP")
-                    
-                    
-                } // fin vstack
-
-                    
-
-        } // fin tabitem 2
-            
-                .tag("1")
-            
-            
-
-
-            
-            
-            
-            LesGroupesView()
-                .tabItem { VStack{
-                    
-                    Image(systemName: "sparkles.tv")
-                    Text("La promo")
-                    
-                    
-                } // fin vstack
-                    
-                    
-        } // fin tabitem 3
-                .tag("3")
-
-            
-         
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        } // fin tab view
         
         
         

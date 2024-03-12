@@ -9,8 +9,12 @@ import SwiftUI
 import UIKit
 
 struct AccueilView: View {
-    var body: some View {
+    @State private var selectedTab = 0
 
+    var body: some View {
+        
+        TabView(selection: $selectedTab){
+            
             VStack{
 
                 
@@ -43,6 +47,100 @@ struct AccueilView: View {
             
             
             
+            
+            
+            ContentView()
+            .tabItem { VStack{
+                
+                Image(systemName: "person.2.circle.fill")
+                Text("le Staff")
+
+            } // fin vstack
+                
+ 
+        } // FIN tabitem 1
+            .tag("0")
+            
+            
+            
+            
+//            AccueilView()
+                .tabItem { VStack{
+
+                    
+                    Image(systemName: "apple.logo")
+                    Text("AFP")
+                    
+                    
+                } // fin vstack
+
+                    
+
+        } // fin tabitem 2
+            
+                .tag("1")
+            
+            
+
+
+            
+            
+            
+            LesGroupesView()
+                .tabItem { VStack{
+                    
+                    Image(systemName: "sparkles.tv")
+                    Text("La promo")
+                    
+                    
+                } // fin vstack
+                    
+                    
+        } // fin tabitem 3
+                .tag("3")
+
+            
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                }
+            
+            } // body
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+
+            
+            
+            
+            
+            
+            
           
             
             
@@ -50,8 +148,6 @@ struct AccueilView: View {
             
             
         
-        } // body
-    } // fin struct
 
 #Preview {
     AccueilView()
