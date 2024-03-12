@@ -83,7 +83,9 @@ struct LesGroupesView: View {
 
                     
                    } // FIN NAVIGATIONVIEW
-                .navigationTitle("les Groupes")
+                .navigationTitle("Les Groupes")
+                .padding(.top, -200)
+
                 
                 
 

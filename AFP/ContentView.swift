@@ -52,10 +52,13 @@ struct ContentView: View {
                                            HStack {
                                                
                                                Text(utilisateur.prenom)
+                                                   .foregroundStyle(.black)
                                                    .bold()
                                               
                                                
                                                Text(utilisateur.name)
+                                                   .foregroundStyle(.black)
+
                                                    .bold()
                                                
                                                Text(utilisateur.prof)
@@ -79,15 +82,18 @@ struct ContentView: View {
                                
                                
                            } // SCROOlVIEW
-                       
+                           .listSectionSeparator(.hidden, edges: .top) // pour enlever la premier ligne
+
                        } // FIN list
-                   
-                       .listStyle(PlainListStyle()) // Pour que la liste prenne toute la largeur
+
+                       .listStyle(PlainListStyle()) // Pour que la liste prenne toute la largeur..
 
                     
                    } // FIN NAVIGATIONVIEW
                 
-                .navigationTitle("le staff")
+                .navigationTitle("Le staff")
+                .padding(.top, -200)
+
                
 
             }// FIN NAVIGATIONstack
