@@ -10,12 +10,14 @@ import UIKit
 
 
 struct ContentView: View {
-   
+    @State private var selectedTab = 0
+
     var body: some View {
         
         
         
-        TabView {
+        TabView(selection: $selectedTab) {
+            
             NavigationStack{
                 
                 NavigationView {
@@ -64,22 +66,10 @@ struct ContentView: View {
                                                
                                                Image(systemName: "arrow.right.to.line.circle.fill")
                                                    .foregroundColor(.red)
-                                               
                                                    
-
-                                               
-                                               
-                                               
                                            } // HASTACK
-                                           
-                                           
-
-                                           
-
 
                                        }// VSTACK
-                                       
-                                       
                                        
                                    } // HSTACK
                                        
@@ -87,35 +77,23 @@ struct ContentView: View {
                                } // FIN NAVLINK
                                
                                
-
                                
-                           } // SCROOVIEW
-                           
-                           
-                           
-
-                           
-                       } // FIN list
-                    
-                    
-                    
-                    
-
+                           } // SCROOlVIEW
                        
-                    
+                       } // FIN list
+                   
                        .listStyle(PlainListStyle()) // Pour que la liste prenne toute la largeur
-
-                    
 
                     
                    } // FIN NAVIGATIONVIEW
                 
                 .navigationTitle("le staff")
-                
-                
-                
+               
 
             }// FIN NAVIGATIONstack
+            
+            
+           
             
             .tabItem { VStack{
                 
@@ -125,23 +103,37 @@ struct ContentView: View {
             } // fin vstack
                 
  
-                            } // FIN tabitem
+        } // FIN tabitem 1
+            .tag("0")
             
-            Text("AFP")
+            
+            
+            
+            AccueilView()
+
+
                 .tabItem { VStack{
+
                     
                     Image(systemName: "apple.logo")
                     Text("AFP")
                     
                     
                 } // fin vstack
+
                     
-                    
-        } // fin tabitem
+
+        } // fin tabitem 2
+            
+                .tag("1")
+            
+            
+
+
             
             
             
-            Text("La promo")
+            LesGroupesView()
                 .tabItem { VStack{
                     
                     Image(systemName: "sparkles.tv")
@@ -151,7 +143,9 @@ struct ContentView: View {
                 } // fin vstack
                     
                     
-        } // fin tabitem
+        } // fin tabitem 3
+                .tag("3")
+
             
          
             

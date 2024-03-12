@@ -12,7 +12,6 @@ import UIKit
 struct LesGroupesView: View {
     
     var body: some View {
-        TabView {
             NavigationStack{
                 
                 
@@ -89,42 +88,8 @@ struct LesGroupesView: View {
                 
 
             } // FIN NAVIGATIONstack
-            .tabItem { VStack{
-                
-                Image(systemName: "person.2.circle.fill")
-                Text("le Staff")
-
-            } // fin vstack
-                
- 
-                            } // FIN tabitem
-            
-            Text("AFP")
-                .tabItem { VStack{
-                    
-                    Image(systemName: "apple.logo")
-                    Text("AFP")
-                    
-                    
-                } // fin vstack
-                    
-                    
-        } // fin tabitem
             
             
-            
-            Text("La promo")
-                .tabItem { VStack{
-                    
-                    Image(systemName: "sparkles.tv")
-                    Text("La promo")
-                    
-                    
-                } // fin vstack
-                    
-                    
-        } // fin tabitem
-        } // FIN tabview
         
       
     } // fin body

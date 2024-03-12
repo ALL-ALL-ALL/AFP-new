@@ -48,39 +48,9 @@ struct DetailsGroupesView: View {
                 Text(groupe.prenom4)
                 Text(groupe.prenom5)
 
-
             } // FIN LIST 
             
-
-                
-                
-                
-                
-                
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         } // fin vstack
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
     } // fin body
 } // FIN struct
