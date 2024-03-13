@@ -12,128 +12,50 @@ struct AccueilView: View {
     @State private var selectedTab = 0
 
     var body: some View {
-        
-        TabView(selection: $selectedTab){
-            
+        TabView(selection: $selectedTab) {
             VStack{
-
-                
                 Text("Apple Foundation Program")
                     .foregroundStyle(.gray)
                     .font(.title)
-                
                     .padding()
                 
                 Text("Bienvenue")
                     .bold()
-                
                     .padding()
                 
                 Image("R")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 160, height: 160)
-                
                     .padding()
-                
-
                 
                 Image(systemName: "apple.logo")
                     .font(.system(size: 40))
-                      
-                } // FIN vstack
+            } // FIN vstack
             
             
             
+            .tabItem {
+                Label("Le staff", systemImage: "person.2.circle.fill")
+            }
+            .tag(0)
             
-            
-            
-            
-            ContentView()
-            .tabItem { VStack{
-                
-                Image(systemName: "person.2.circle.fill")
-                Text("le Staff")
-
-            } // fin vstack
-                
- 
-        } // FIN tabitem 1
-            .tag("0")
-            
-            
-            
-            
-//            AccueilView()
-                .tabItem { VStack{
-
-                    
-                    Image(systemName: "apple.logo")
-                    Text("AFP")
-                    
-                    
-                } // fin vstack
-
-                    
-
-        } // fin tabitem 2
-            
-                .tag("1")
-            
-            
-
-
-            
-            
-            
-            LesGroupesView()
-                .tabItem { VStack{
-                    
-                    Image(systemName: "sparkles.tv")
-                    Text("La promo")
-                    
-                    
-                } // fin vstack
-                    
-                    
-        } // fin tabitem 3
-                .tag("3")
-
-            
-         
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            Text("Contenu du deuxième onglet")
+                .tabItem {
+                    Label("APF", systemImage: "applelogo")
                 }
+                .tag(1)
             
-            } // body
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        }
+            Text("Contenu du troisième onglet")
+                .tabItem {
+                    Label("La promo", systemImage: "tv")
+                }
+                .tag(2)
+        } // FIN tabview
+    } // body
+} //fin struct
+
+
 
             
             
@@ -152,3 +74,13 @@ struct AccueilView: View {
 #Preview {
     AccueilView()
 }
+
+
+//.tabItem { VStack{
+//    
+//    Image(systemName: "sparkles.tv")
+//    Text("La promo")
+//    
+//    
+//} // fin vstack
+//} // fin tabitem 3
