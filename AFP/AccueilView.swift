@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 struct AccueilView: View {
-    @State private var selectedTab = 0
+    @State private var selectedTab = 1
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -35,22 +35,9 @@ struct AccueilView: View {
             
             
             
-            .tabItem {
-                Label("Le staff", systemImage: "person.2.circle.fill")
-            }
-            .tag(0)
             
-            Text("Contenu du deuxième onglet")
-                .tabItem {
-                    Label("APF", systemImage: "applelogo")
-                }
-                .tag(1)
             
-            Text("Contenu du troisième onglet")
-                .tabItem {
-                    Label("La promo", systemImage: "tv")
-                }
-                .tag(2)
+            
         } // FIN tabview
     } // body
 } //fin struct
