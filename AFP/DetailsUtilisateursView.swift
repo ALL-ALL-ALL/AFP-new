@@ -58,7 +58,6 @@ struct DetailsUtilisateursView: View {
             
            
         }
-        .navigationTitle("\(utilisateur.name) \(utilisateur.prenom)")
     }
 }
 

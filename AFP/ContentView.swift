@@ -18,14 +18,22 @@ struct ContentView: View {
         
             
         TabView(selection: $selectedTab) {
+            
             NavigationStack{
-                    
+                
                     NavigationView {
                            List(Utilisateurs) { utilisateur in
                                ScrollView{
                                    NavigationLink {
                                        
                                        DetailsUtilisateursView(utilisateur: utilisateur)
+
+
+
+
+
+
+
                                        
                                                        
                                                        
@@ -73,23 +81,36 @@ struct ContentView: View {
                                                } // HASTACK
 
                                            }// VSTACK
+
+
+
                                            
                                        } // HSTACK
+                                           
                                            
                                            
                                    } // FIN NAVLINK
                                    
                                    
                                    
+                                   
+                                   
+                                   
                                } // SCROOlVIEW
                                .listSectionSeparator(.hidden, edges: .top) // pour enlever la premier ligne
+                               
 
                            } // FIN list
+                        
+                        
 
                            .listStyle(PlainListStyle()) // Pour que la liste prenne toute la largeur..
 
                         
                        } // FIN NAVIGATIONVIEW
+
+                
+                
                     
                     .navigationTitle("Le staff")
                     .padding(.top, -200)
@@ -97,10 +118,22 @@ struct ContentView: View {
                    
 
             }// FIN NAVIGATIONstack
+
             
             
             
-            .tabItem { // ne pas oublier que ici corespond à la vue plus a gauche
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            .tabItem {
                 
                 Label("Le staff", systemImage: "person.2.circle.fill")
                 
